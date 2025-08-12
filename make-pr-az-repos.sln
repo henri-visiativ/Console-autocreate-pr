@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "make-pr-az-repos", "make-pr-az-repos.csproj", "{DC77BCE3-2845-53F2-35E5-00D2092BF053}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC77BCE3-2845-53F2-35E5-00D2092BF053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC77BCE3-2845-53F2-35E5-00D2092BF053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC77BCE3-2845-53F2-35E5-00D2092BF053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC77BCE3-2845-53F2-35E5-00D2092BF053}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D747C268-7AE2-41A0-9AA7-F9B6F29BF31F}
+	EndGlobalSection
+EndGlobal

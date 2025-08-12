@@ -1,0 +1,40 @@
+# .NET Desktop
+# Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildConfiguration: 'Release'
+  runtime: 'win-x64'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    version: 9.x
+
+- task: NuGetAuthenticate@1
+
+- task: DotNetCoreCLI@2
+  inputs:
+    projects: $(solution)
+    command: 'restore'
+    feedsToUse: 'select'
+    vstsFeed: '134eced6-808c-4adb-964d-f06d99cf86f1/0b43853d-9ce7-4f6e-9c3d-5c52eef0da77'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    arguments: '--configuration $(buildConfiguration) --self-contained -p:PublishSingleFile=true --output $(Build.ArtifactStagingDirectory) --runtime $(runtime)'
+    projects: $(solution)
+    publishWebProjects: false
+    zipAfterPublish: false
+
+- publish: $(Build.ArtifactStagingDirectory)
+  artifact: make-pr-az-repos
